@@ -1,0 +1,21 @@
+{
+  "name": "oc-p3-ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "build":"sass ./sass/global.scss ./css/styles.css --style=compressed --no-source-map",
+    "watch":"sass -w ./sass/global.scss ./css/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsoury/OC-P3-Ohmyfood.git"
+  },
+  "author": "JS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsoury/OC-P3-Ohmyfood/issues"
+  },
+  "homepage": "https://github.com/jsoury/OC-P3-Ohmyfood#readme"
+}
