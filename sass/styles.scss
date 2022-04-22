@@ -5,10 +5,14 @@ $colours:(
     secondary:#FF79DA, 
     tertiary: #99E2D0 
 );
-$color-primary:#9356DC;
+
+$color-primary:rgb(147, 86, 220);
 $color-secondary:#FF79DA;
 $color-tertiary: #99E2D0;
-
+$color-grey :#eaeaea;
+$color-grey-light:#f6f6f6;
+$color-green:#008766;
+$color-icon-grey:#7e7e7e;
 
 $font:(
     title: "'Shrikhand', cursive",

@@ -22,19 +22,63 @@
   <body>
     <!-- HEADER-->
     <header class="header">
-      <h1>Ohmyfood</h1>
-      <span><i class="fa-solid fa-location-dot"></i> Paris, Belleville</span>
+      <div class="header__logo">
+        <h1>
+          <img
+            src="./images/logo/ohmyfood.png"
+            alt="logo Ohmyfood"
+            class="header__logo--brand"
+          />
+        </h1>
+      </div>
+      <div class="header__location">
+        <span><i class="fa-solid fa-location-dot"></i> Paris, Belleville</span>
+      </div>
+      <div class="header__container">
+        <h2>Réservez le menu qui vous convient</h2>
+        <span
+          >Découvrez des restaurants d'exception, séléctonnés par nos
+          soins.</span
+        >
+        <div class="btn">Explorer nos restaurants</div>
+      </div>
     </header>
     <!-- END HEADER-->
     <!-- MAIN-->
     <main class="main">
-      <section class="working" id="working">
-        <h2>Fonctionnement</h2>
-      </section>
-      <section class="restaurants" id="restaurants">
-        <h2>Restaurants</h2>
-      </section>
+      <div class="container">
+        <section class="working" id="working">
+          <h2>Fonctionnement</h2>
+          <div class="working__container">
+            <div class="card card--working">
+              <div class="card__body">
+                <div class="working__bullete">1</div>
+                <i class="fa-solid fa-mobile-screen-button"></i>
+                <div class="strong">Choisissez un restaurant</div>
+              </div>
+            </div>
+            <div class="card card--working">
+              <div class="card__body">
+                <div class="working__bullete">2</div>
+                <i class="fa-solid fa-list"></i>
+                <div class="strong">Composez votre menu</div>
+              </div>
+            </div>
+            <div class="card card--working store">
+              <div class="card__body">
+                <div class="working__bullete">3</div>
+                <i class="fa-solid fa-store store"></i>
+                <div class="strong">Dégustez au restaurant</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="restaurants" id="restaurants">
+          <h2>Restaurants</h2>
+        </section>
+      </div>
     </main>
+
     <!-- END MAIN-->
     <!-- FOOTER-->
     <footer class="footer"><h3>Ohmyfood</h3></footer>

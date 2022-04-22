@@ -337,6 +337,54 @@ template {
   display: none;
 }
 
+.header__logo {
+  display: flex;
+  border-bottom: 5px outset rgba(236, 236, 236, 0.11);
+}
+.header__logo--brand {
+  display: block;
+  margin: auto;
+  width: 50%;
+}
+.header__location {
+  background-color: #eaeaea;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header__container {
+  background: #f6f6f6;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.working i {
+  color: #7e7e7e;
+  font-size: 22px;
+  margin: 0 30px;
+}
+.working i.store {
+  color: rgb(147, 86, 220);
+}
+.working__container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.working__bullete {
+  color: white;
+  background: rgb(147, 86, 220);
+  border-radius: 50%;
+  height: 5px;
+  width: 5px;
+  padding: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -348,6 +396,45 @@ body {
 
 h1, h3 {
   font-family: "Shrikhand", cursive;
+}
+
+header, section {
+  margin-bottom: 40px;
+}
+
+.strong {
+  font-weight: 700;
+}
+
+.container {
+  margin: 0 20px;
+}
+
+.btn {
+  margin: 30px 60px;
+  background: linear-gradient(#FF79DA, rgb(147, 86, 220));
+  color: white;
+  border-radius: 50px;
+  padding: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 70px;
+  border-radius: 20px;
+}
+.card__body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.card--working {
+  display: flex;
+  align-items: center;
+  background: #f6f6f6;
+}
+.card--working.store {
+  background: rgba(147, 86, 220, 0.15);
 }
 
 /*# sourceMappingURL=styles.css.map */
