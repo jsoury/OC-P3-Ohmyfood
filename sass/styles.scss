@@ -1,22 +1,26 @@
 @import "libs/normalize.scss";
+@import "libs/function.scss";
 
-$colours:(
-    primary:#9356DC, 
-    secondary:#FF79DA, 
-    tertiary: #99E2D0 
+
+$colors:(
+    primary:hsl(267, 66%, 60%), 
+    secondary:hsl(317, 100%, 74%), 
+    tertiary:hsl(165, 56%, 74%),
+    dark:hsl(0, 0%, 0%),
+    light:hsl(0, 0%, 100%),    
+    green:hsl(166, 100%, 14%)
+    
+    
 );
 
-$color-primary:rgb(147, 86, 220);
-$color-secondary:#FF79DA;
-$color-tertiary: #99E2D0;
-$color-grey :#eaeaea;
-$color-grey-light:#f6f6f6;
-$color-green:#008766;
-$color-icon-grey:#7e7e7e;
+$background-location: tint(color(dark),91.6);
+$background-grey-light: tint(color(dark),96.5);
+$working-icon: tint(color(dark),49.5);
+$background-footer: tint(color(dark),20.8);
+$working-store: tint(color(primary),85);
+$background-button: linear-gradient(color(secondary), color(primary)); 
 
-$font:(
-    title: "'Shrikhand', cursive",
-    text: "'Roboto', sans-serif"
-);
-$font-title:'Shrikhand', cursive;
-$font-text: 'Roboto', sans-serif;
+$font-title:('Shrikhand', cursive);
+$font-text: ('Roboto', sans-serif);
+
+$shadow:rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;

@@ -32,7 +32,10 @@
         </h1>
       </div>
       <div class="header__location">
-        <span><i class="fa-solid fa-location-dot"></i> Paris, Belleville</span>
+        <span
+          ><i class="fa-solid fa-location-dot"></i>
+          <strong>Paris, Belleville</strong></span
+        >
       </div>
       <div class="header__container">
         <h2>Réservez le menu qui vous convient</h2>
@@ -40,48 +43,120 @@
           >Découvrez des restaurants d'exception, séléctonnés par nos
           soins.</span
         >
-        <div class="btn">Explorer nos restaurants</div>
+        <a class="btn" href="#restaurants">Explorer nos restaurants</a>
       </div>
     </header>
     <!-- END HEADER-->
     <!-- MAIN-->
     <main class="main">
-      <div class="container">
-        <section class="working" id="working">
-          <h2>Fonctionnement</h2>
-          <div class="working__container">
-            <div class="card card--working">
-              <div class="card__body">
-                <div class="working__bullete">1</div>
-                <i class="fa-solid fa-mobile-screen-button"></i>
-                <div class="strong">Choisissez un restaurant</div>
-              </div>
-            </div>
-            <div class="card card--working">
-              <div class="card__body">
-                <div class="working__bullete">2</div>
-                <i class="fa-solid fa-list"></i>
-                <div class="strong">Composez votre menu</div>
-              </div>
-            </div>
-            <div class="card card--working store">
-              <div class="card__body">
-                <div class="working__bullete">3</div>
-                <i class="fa-solid fa-store store"></i>
-                <div class="strong">Dégustez au restaurant</div>
-              </div>
+      <section class="working" id="working">
+        <h2>Fonctionnement</h2>
+        <div class="working__container">
+          <div class="jumbotron jumbotron-working">
+            <div class="jumbotron-working__body">
+              <div class="working__bullete">1</div>
+              <i class="fa-solid fa-mobile-screen-button"></i>
+              <strong>Choisissez un restaurant</strong>
             </div>
           </div>
-        </section>
-        <section class="restaurants" id="restaurants">
-          <h2>Restaurants</h2>
-        </section>
-      </div>
+          <div class="jumbotron jumbotron-working">
+            <div class="jumbotron-working__body">
+              <div class="working__bullete">2</div>
+              <i class="fa-solid fa-list"></i>
+              <strong>Composez votre menu</strong>
+            </div>
+          </div>
+          <div class="jumbotron jumbotron-working store">
+            <div class="jumbotron-working__body">
+              <div class="working__bullete">3</div>
+              <i class="fa-solid fa-store store"></i>
+              <strong>Dégustez au restaurant</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="restaurants" id="restaurants">
+        <h2>Restaurants</h2>
+        <div class="restaurants__container">
+          <a class="card" href="#">
+            <div class="card__image">
+              <div class="card__badge">Nouveau</div>
+              <img
+                src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg"
+                alt="Auberge La Cannebière"
+              />
+            </div>
+            <div class="card__body">
+              <strong>La palette du gôut</strong>
+              <br />Ménilmontant
+              <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__image">
+              <div class="card__badge">Nouveau</div>
+              <img
+                src="./images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg"
+                alt="Auberge La Cannebière"
+              />
+            </div>
+            <div class="card__body">
+              <strong>La note enchantée</strong>
+              <br />Charonne
+              <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </a>
+          <a class="card" href="pages/a-la-francaise.html">
+            <div class="card__image">
+              <div class="card__badge">Nouveau</div>
+              <img
+                src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg"
+                alt="Auberge La Cannebière"
+              />
+            </div>
+            <div class="card__body">
+              <strong>&Agrave; la fran&ccedil;aise</strong>
+              <br />cité Rouge
+              <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </a>
+          <a class="card" href="#">
+            <div class="card__image">
+              <div class="card__badge">Nouveau</div>
+              <img
+                src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
+                alt="Auberge La Cannebière"
+              />
+            </div>
+            <div class="card__body">
+              <strong>le délice des sens</strong>
+              <br />Folie-Méricourt
+              <div class="heart"><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </a>
+        </div>
+      </section>
     </main>
 
     <!-- END MAIN-->
     <!-- FOOTER-->
-    <footer class="footer"><h3>Ohmyfood</h3></footer>
+    <footer class="footer">
+      <h3>Ohmyfood</h3>
+      <ul>
+        <li>
+          <a href="#footer"
+            ><i class="fa-solid fa-utensils"></i> Proposer un restaurant</a
+          >
+        </li>
+        <li>
+          <a href="#footer"
+            ><i class="fa-solid fa-handshake-angle"></i> Devenir partenaire</a
+          >
+        </li>
+        <li><a href="#footer">Mention légales</a></li>
+        <li><a href="mailto:contact@homyfood.com">Contact</a></li>
+      </ul>
+    </footer>
     <!-- END FOOTER-->
   </body>
 </html>

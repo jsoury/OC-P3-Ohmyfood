@@ -53,9 +53,9 @@ Technologies
 ## Etapes
 
 - [x] Étape 1 : Mettez en place votre environnement de développement
-- [ ] Étape 2 : Découpez votre maquette à l’aide d’un papier et d’un crayon
-- [ ] Étape 3 : Intégrez le header du projet
-- [ ] Étape 4 : Ajoutez la partie fonctionnement
+- [x] Étape 2 : Découpez votre maquette à l’aide d’un papier et d’un crayon
+- [x] Étape 3 : Intégrez le header du projet
+- [x] Étape 4 : Ajoutez la partie fonctionnement
 - [ ] Étape 5 : Ajout de la partie restaurants
 - [ ] Étape 6 : Réalisez la “card dish”
 - [ ] Étape 7 : Réalisez la page restaurant

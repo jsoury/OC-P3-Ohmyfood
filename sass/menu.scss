@@ -1,0 +1,43 @@
+.menu{
+    position: relative;
+    top:-90px;
+    border-radius: 20px 20px 0 0;
+    background-color: $background-grey-light;
+    margin: 0;
+
+    section{
+        display: flex;
+        flex-direction: column;
+        gap:15px;
+    }
+
+    &__container{
+        margin: 0 10px;
+        padding: 10px 0;
+    }
+    &__title{
+        font-family: $font-title;
+        h2{
+            font-weight: 300;
+        }
+    }
+    h3{
+        font-family: $font-text;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+}
+.dish{
+    &__title{
+        position: relative;
+        &::before{
+            content: "";
+            position: absolute;
+            left    : 0;
+            top  : 25px;
+            height  : 1px;
+            width   : 40px;
+            border-bottom:5px solid color(tertiary);
+        }
+    }
+}

@@ -1,0 +1,7 @@
+@import "card.scss";
+
+.restaurants__container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}

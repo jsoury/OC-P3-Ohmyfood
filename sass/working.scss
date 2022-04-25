@@ -1,20 +1,20 @@
-.working{
+.working{    
     i{
-        color:$color-icon-grey;
+        color:$working-icon;
         font-size: 22px; 
         margin: 0 30px;
         &.store{
-            color:$color-primary
-        } 
+            color:color(primary)
+        }
     }
     &__container{
         display: flex;
         flex-direction: column;
-        gap:20px
-    }
+        gap:20px;
+    }      
     &__bullete{
-        color: white;
-        background: $color-primary;
+        color: color(light);
+        background: color(primary);
         border-radius: 50%;
         height: 5px;
         width: 5px;
