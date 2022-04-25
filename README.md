@@ -56,13 +56,13 @@ Technologies
 - [x] Étape 2 : Découpez votre maquette à l’aide d’un papier et d’un crayon
 - [x] Étape 3 : Intégrez le header du projet
 - [x] Étape 4 : Ajoutez la partie fonctionnement
-- [ ] Étape 5 : Ajout de la partie restaurants
-- [ ] Étape 6 : Réalisez la “card dish”
-- [ ] Étape 7 : Réalisez la page restaurant
+- [x] Étape 5 : Ajout de la partie restaurants
+- [x] Étape 6 : Réalisez le “jumbotron dish”
+- [x] Étape 7 : Réalisez la page restaurant
 - [ ] Étape 8 : créez les effets bouton
 - [ ] Étape 9 : créez les effets page d’accueil
 - [ ] Étape 10 : créez les effets page de menu
-- [ ] Étape 10 : Implémentez le footer
+- [x] Étape 10 : Implémentez le footer
 - [ ] Étape 11 : Vérifiez la qualité de votre code
 
 ## Auteur
