@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -339,6 +340,7 @@ template {
 
 .header__logo {
   display: flex;
+  justify-content: center;
   border-bottom: 5px outset rgba(236, 236, 236, 0.11);
 }
 .header__logo--brand {
@@ -358,6 +360,19 @@ template {
   text-align: center;
   padding: 20px 20px;
 }
+.header nav {
+  position: relative;
+}
+.header nav .fa-arrow-left {
+  position: absolute;
+  top: 40%;
+  left: 20px;
+}
+.header .header__image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 
 .working i {
   color: #7e7e7e;
@@ -365,7 +380,7 @@ template {
   margin: 0 30px;
 }
 .working i.store {
-  color: rgb(147, 86, 220);
+  color: hsl(267deg, 66%, 60%);
 }
 .working__container {
   display: flex;
@@ -373,8 +388,8 @@ template {
   gap: 20px;
 }
 .working__bullete {
-  color: white;
-  background: rgb(147, 86, 220);
+  color: hsl(0deg, 0%, 100%);
+  background: hsl(267deg, 66%, 60%);
   border-radius: 50%;
   height: 5px;
   width: 5px;
@@ -383,6 +398,237 @@ template {
   justify-content: center;
   align-items: center;
   margin-left: -10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 5px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.card__image {
+  position: relative;
+}
+.card__image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  aspect-ratio: 16/9;
+}
+.card__badge {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  float: right;
+  color: hsl(166deg, 100%, 14%);
+  font-weight: 700;
+  background-color: hsl(165deg, 56%, 74%);
+  padding: 10px 15px;
+}
+.card__body {
+  position: relative;
+  padding: 10px;
+  line-height: 1.6;
+}
+.card__body .heart {
+  position: absolute;
+  right: 8%;
+  top: 20%;
+  background-color: hsl(0deg, 0%, 0%);
+  width: 20px;
+  height: 20px;
+  mask-image: url(../images/heart-regular.svg);
+  -webkit-mask-image: url(../images/heart-regular.svg);
+  background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-size: 100% 0px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: all 0.35s ease-in-out;
+}
+.card__body .heart i {
+  height: 100%;
+  width: 100%;
+  background: hsl(0deg, 0%, 0%);
+  display: flex;
+}
+.card__body .heart:hover, .card__body .heart :active {
+  mask-image: url(../images/heart-solid.svg);
+  -webkit-mask-image: url(../images/heart-solid.svg);
+  background-size: 100% 100%;
+}
+.card__body .heart:hover i, .card__body .heart :active i {
+  color: transparent;
+  background: transparent;
+}
+
+.restaurants__container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer {
+  background: #353535;
+  color: hsl(0deg, 0%, 100%);
+}
+.footer h3 {
+  margin: 0 20px;
+  padding: 20px 0;
+}
+.footer a {
+  color: hsl(0deg, 0%, 100%);
+}
+.footer a:hover, .footer a :active {
+  color: hsl(267deg, 66%, 60%);
+}
+.footer ul {
+  margin: 0 20px;
+  list-style: none;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.menu {
+  position: relative;
+  top: -90px;
+  border-radius: 20px 20px 0 0;
+  background-color: #f6f6f6;
+  margin: 0;
+}
+.menu section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.menu__container {
+  margin: 0 10px;
+  padding: 10px 0;
+}
+.menu__title {
+  font-family: "Shrikhand", cursive;
+}
+.menu__title h2 {
+  font-weight: 300;
+}
+.menu h3 {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.dish__title {
+  position: relative;
+}
+.dish__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25px;
+  height: 1px;
+  width: 40px;
+  border-bottom: 5px solid hsl(165deg, 56%, 74%);
+}
+
+.jumbotron, .jumbotron-menu, .jumbotron-working {
+  height: 70px;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+
+.jumbotron-working {
+  background: #f6f6f6;
+}
+.jumbotron-working__body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.jumbotron-working.store {
+  background: #efe6fa;
+}
+
+.jumbotron-menu {
+  overflow: hidden;
+}
+.jumbotron-menu__body {
+  width: 100%;
+  padding: 15px 10px;
+  overflow: hidden;
+  transition: all 600ms;
+}
+.jumbotron-menu__title {
+  font-weight: 700;
+}
+.jumbotron-menu__description--float-right {
+  float: right;
+}
+.jumbotron-menu__price {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  padding: 10px;
+  font-weight: 700;
+}
+.jumbotron-menu i {
+  color: hsl(0deg, 0%, 100%);
+  font-size: 25px;
+  transition: all 600ms;
+}
+.jumbotron-menu:hover > .selected, .jumbotron-menu :active > .selected {
+  transform: scaleX(1);
+  width: 100px;
+  margin: 0;
+}
+.jumbotron-menu:hover > .selected i, .jumbotron-menu :active > .selected i {
+  transform: rotate(360deg);
+}
+
+/**
+ * Helper class pour tronquer et ajouter une ellipse à une chaîne
+ * de caractères trop longue pour tenir sur une ligne
+ * 1. Empêche le retour automatique à la ligne,
+ * force l’affichage sur une seule ligne.
+ * 2. Ajoute une ellipse à la fin de la ligne si dépassement.
+ */
+.ellipsis {
+  white-space: nowrap;
+  /* 1 */
+  text-overflow: ellipsis;
+  /* 2 */
+  overflow: hidden;
+}
+
+/**
+ * box contenant l'effet de selection d'un plat
+ */
+.selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(165deg, 56%, 74%);
+  height: 100%;
+  width: 0px;
+  margin-right: -20px;
+  border-radius: 0 20px 20px 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: all 600ms;
+}
+
+.btn {
+  margin: 30px 60px;
+  background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  display: block;
 }
 
 * {
@@ -396,45 +642,20 @@ body {
 
 h1, h3 {
   font-family: "Shrikhand", cursive;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 0%);
 }
 
 header, section {
   margin-bottom: 40px;
 }
 
-.strong {
-  font-weight: 700;
-}
-
-.container {
+main {
   margin: 0 20px;
-}
-
-.btn {
-  margin: 30px 60px;
-  background: linear-gradient(#FF79DA, rgb(147, 86, 220));
-  color: white;
-  border-radius: 50px;
-  padding: 20px;
-}
-
-.card {
-  width: 100%;
-  height: 70px;
-  border-radius: 20px;
-}
-.card__body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.card--working {
-  display: flex;
-  align-items: center;
-  background: #f6f6f6;
-}
-.card--working.store {
-  background: rgba(147, 86, 220, 0.15);
 }
 
 /*# sourceMappingURL=styles.css.map */

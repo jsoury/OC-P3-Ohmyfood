@@ -1,0 +1,21 @@
+.footer{
+    background: $background-footer;
+    color: color(light);
+    
+    h3{
+        margin: 0 20px;
+        padding: 20px 0;
+    }
+    a{
+        color:color(light);
+        &:hover, :active{
+            color:color(primary)
+        }
+    }
+    ul{
+        margin: 0 20px;
+        list-style: none;
+        padding: 0;
+        line-height: 1.6;
+    }    
+}

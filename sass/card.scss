@@ -1,0 +1,64 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: color(light);
+    padding: 5px;
+    border-radius: 25px;
+    box-shadow: $shadow;
+    &__image{
+        position: relative;
+        
+        img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+            aspect-ratio: 16/9;
+        }
+    }
+    &__badge{
+        position: absolute;
+        top:20px;
+        right: 15px;
+        float: right;
+        color: color(green);
+        font-weight: 700;
+        background-color: color(tertiary);
+        padding: 10px 15px;
+    }
+    &__body{
+        position: relative;
+        padding: 10px;
+        line-height: 1.6;
+        .heart{
+            position: absolute;
+            right: 8%;
+            top:20%;
+            background-color: color(dark);
+            width: 20px;
+            height: 20px;
+            mask-image: url(../images/heart-regular.svg);
+            -webkit-mask-image: url(../images/heart-regular.svg);
+            background: linear-gradient(color(secondary),color(primary));
+            background-size: 100% 0px;
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            transition: all 0.35s ease-in-out;
+            i{
+                height: 100%;
+                width: 100%;
+                background: color(dark);
+                display: flex;
+            }            
+            &:hover,:active{
+                i{
+                    color: transparent;
+                    background: transparent;
+                }
+                mask-image: url(../images/heart-solid.svg);
+                -webkit-mask-image: url(../images/heart-solid.svg);
+                background-size: 100% 100%;
+            }
+        }
+    }
+}
