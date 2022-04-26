@@ -1,3 +1,7 @@
+$num-dishs: 3;
+$anim-dur: 1000ms;
+$anim-delay: calc($anim-dur / $num-dishs);
+
 
 .jumbotron{
     height: 70px;
@@ -21,7 +25,14 @@
 }
 
 .jumbotron-menu{
-    @extend .jumbotron;    
+    @extend .jumbotron;
+    cursor: pointer;
+    animation: jumbotron-display $anim-dur ease-in-out;
+    @for $i from 1 through $num-dishs {
+        &--dish#{$i}{
+            animation-delay: $anim-delay * $i;
+        }
+    }    
     overflow: hidden;    
     &__body{
         width: 100%;       
@@ -60,10 +71,7 @@
             }
         }
         
-    } 
-      
-    
-    
+    }    
 }
 /**
  * Helper class pour tronquer et ajouter une ellipse à une chaîne
@@ -92,4 +100,16 @@
     transform-origin: right;
     transform: scaleX(0);
     transition: all 600ms;
+}
+
+@keyframes jumbotron-display{
+    0% {
+        opacity: 0;
+        transform:translateY(999px);        
+    }          
+    100% {
+        opacity: 1;
+        transform:translateY(0) ;
+    }
+    
 }

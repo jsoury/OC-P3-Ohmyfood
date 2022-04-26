@@ -1,12 +1,12 @@
 @import "styles.scss";
+@import "card.scss";
 @import "header.scss";
 @import "working.scss";
 @import "restaurants.scss";
 @import "footer.scss";
 @import "menu.scss";
-@import "./jumbotron.scss";
-@import"./button.scss";
-
+@import "jumbotron.scss";
+@import "button.scss";
 
 *{
     box-sizing: border-box;
@@ -17,16 +17,15 @@ body{
     font-family: $font-text;
 }
 
-h1,h3
- {
+h1,h3{
     font-family: $font-title;
     font-weight: 300;
 }
 
-a {
+a{
     text-decoration: none;
     color: color(dark);
-    }
+}
 
 header, section{
     margin-bottom: 40px;

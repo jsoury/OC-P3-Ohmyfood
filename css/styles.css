@@ -338,6 +338,135 @@ template {
   display: none;
 }
 
+@keyframes fill-heart {
+  0% {
+    background-size: 100% 0px;
+  }
+  50% {
+    background-size: 100% 50%;
+  }
+  100% {
+    background-size: 100% 100%;
+  }
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 5px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  overflow: hidden;
+}
+.card__link {
+  position: relative;
+}
+.card__link img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+  aspect-ratio: 16/9;
+}
+.card__link:hover > .card__image, .card__link :active > .card__image {
+  transform: scale(1.05);
+}
+.card__link:hover > .card__overlay, .card__link :active > .card__overlay {
+  transform: scale(1.05);
+  opacity: 0.5;
+}
+.card__link:hover > .card__overlay--details, .card__link :active > .card__overlay--details {
+  top: 50%;
+  left: 50%;
+  opacity: 1;
+}
+.card__overlay {
+  background: #f6f6f6;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.4s ease-in-out 0s;
+}
+.card__overlay--details {
+  font-size: 25px;
+  color: hsl(0deg, 0%, 0%);
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  top: 20%;
+  left: 50%;
+  opacity: 0;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease-in-out 0s;
+}
+.card__image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transform-origin: 50% 50%;
+  transform: scale(1);
+  transition: all 0.4s ease-in-out 0s;
+}
+.card__badge {
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  float: right;
+  color: hsl(166deg, 100%, 14%);
+  font-weight: 700;
+  background-color: hsl(165deg, 56%, 74%);
+  padding: 10px 15px;
+}
+.card__body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  line-height: 1.6;
+}
+.card__body .like {
+  width: 20px;
+  height: 20px;
+}
+.card__body p {
+  margin: 0;
+}
+
+.card-like {
+  width: 25px;
+  height: 25px;
+  mask-image: url(../images/heart-solid.svg);
+  -webkit-mask-image: url(../images/heart-solid.svg);
+  background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-size: 100% 0px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transform-origin: 0 bottom;
+  cursor: pointer;
+}
+.card-like:hover, .card-like :active {
+  animation: fill-heart 400ms both;
+}
+.card-like:hover > .fa-heart, .card-like :active > .fa-heart {
+  opacity: 0;
+}
+.card-like .fa-heart {
+  font-size: 25px;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+
 .header__logo {
   display: flex;
   justify-content: center;
@@ -400,70 +529,6 @@ template {
   margin-left: -10px;
 }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  background-color: hsl(0deg, 0%, 100%);
-  padding: 5px;
-  border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-}
-.card__image {
-  position: relative;
-}
-.card__image img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-  border-radius: 20px 20px 0 0;
-  aspect-ratio: 16/9;
-}
-.card__badge {
-  position: absolute;
-  top: 20px;
-  right: 15px;
-  float: right;
-  color: hsl(166deg, 100%, 14%);
-  font-weight: 700;
-  background-color: hsl(165deg, 56%, 74%);
-  padding: 10px 15px;
-}
-.card__body {
-  position: relative;
-  padding: 10px;
-  line-height: 1.6;
-}
-.card__body .heart {
-  position: absolute;
-  right: 8%;
-  top: 20%;
-  background-color: hsl(0deg, 0%, 0%);
-  width: 20px;
-  height: 20px;
-  mask-image: url(../images/heart-regular.svg);
-  -webkit-mask-image: url(../images/heart-regular.svg);
-  background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
-  background-size: 100% 0px;
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  transition: all 0.35s ease-in-out;
-}
-.card__body .heart i {
-  height: 100%;
-  width: 100%;
-  background: hsl(0deg, 0%, 0%);
-  display: flex;
-}
-.card__body .heart:hover, .card__body .heart :active {
-  mask-image: url(../images/heart-solid.svg);
-  -webkit-mask-image: url(../images/heart-solid.svg);
-  background-size: 100% 100%;
-}
-.card__body .heart:hover i, .card__body .heart :active i {
-  color: transparent;
-  background: transparent;
-}
-
 .restaurants__container {
   display: flex;
   flex-direction: column;
@@ -508,7 +573,11 @@ template {
   padding: 10px 0;
 }
 .menu__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   font-family: "Shrikhand", cursive;
+  margin-right: 20px;
 }
 .menu__title h2 {
   font-weight: 300;
@@ -519,6 +588,9 @@ template {
   font-weight: 300;
 }
 
+.dish {
+  animation: dish-display 2000ms 500ms both;
+}
 .dish__title {
   position: relative;
 }
@@ -532,6 +604,38 @@ template {
   border-bottom: 5px solid hsl(165deg, 56%, 74%);
 }
 
+.menu-like {
+  width: 30px;
+  height: 30px;
+  mask-image: url(../images/heart-solid.svg);
+  -webkit-mask-image: url(../images/heart-solid.svg);
+  background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
+  background-size: 100% 0px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transform-origin: 0 bottom;
+  cursor: pointer;
+}
+.menu-like:hover, .menu-like :active {
+  animation: fill-heart 400ms both;
+}
+.menu-like:hover > .fa-heart, .menu-like :active > .fa-heart {
+  opacity: 0;
+}
+.menu-like .fa-heart {
+  font-size: 30px;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+}
+
+@keyframes dish-display {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .jumbotron, .jumbotron-menu, .jumbotron-working {
   height: 70px;
   border-radius: 20px;
@@ -554,7 +658,18 @@ template {
 }
 
 .jumbotron-menu {
+  cursor: pointer;
+  animation: jumbotron-display 1000ms ease-in-out;
   overflow: hidden;
+}
+.jumbotron-menu--dish1 {
+  animation-delay: 333.3333333333ms;
+}
+.jumbotron-menu--dish2 {
+  animation-delay: 666.6666666667ms;
+}
+.jumbotron-menu--dish3 {
+  animation-delay: 1000ms;
 }
 .jumbotron-menu__body {
   width: 100%;
@@ -621,6 +736,16 @@ template {
   transition: all 600ms;
 }
 
+@keyframes jumbotron-display {
+  0% {
+    opacity: 0;
+    transform: translateY(999px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .btn {
   margin: 30px 60px;
   background: linear-gradient(hsl(317deg, 100%, 74%), hsl(267deg, 66%, 60%));
