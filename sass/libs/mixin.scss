@@ -1,0 +1,38 @@
+@mixin like($like-height, $like-width, $icon-size) {
+    &:hover,:active {        
+        animation: fill-heart 400ms both;
+        & > .fa-heart{
+            opacity: 0;
+        }           
+    }
+    width: $like-width*1px;
+    height: $like-height*1px;   
+    mask-image: url(../images/heart-solid.svg);
+    -webkit-mask-image: url(../images/heart-solid.svg);
+    background: linear-gradient(color(secondary),color(primary));
+    background-size: 100% 0px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    transform-origin: 0 bottom;
+    cursor: pointer;
+
+    .fa-heart{
+    font-size: $icon-size*1px;
+    opacity: 1;
+    transition: all 500ms ease-in-out;
+    }    
+}
+
+@keyframes fill-heart{
+    0% {
+        background-size: 100% 0px;
+    }    
+    50% {
+        background-size: 100% 50%;
+    }
+    100% {
+        background-size: 100% 100%;
+    }
+    
+}
+

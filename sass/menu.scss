@@ -16,7 +16,11 @@
         padding: 10px 0;
     }
     &__title{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         font-family: $font-title;
+        margin-right: 20px;
         h2{
             font-weight: 300;
         }
@@ -28,6 +32,7 @@
     }
 }
 .dish{
+    animation: dish-display 2000ms 500ms both;
     &__title{
         position: relative;
         &::before{
@@ -40,4 +45,17 @@
             border-bottom:5px solid color(tertiary);
         }
     }
+}
+.menu-like{
+    @include like(30,30,30);
+}
+
+@keyframes dish-display{
+    0% {
+        opacity: 0;
+    }    
+    100% {
+        opacity: 1;
+    }
+    
 }

@@ -1,5 +1,6 @@
 @import "libs/normalize.scss";
 @import "libs/function.scss";
+@import "libs/mixin.scss";
 
 
 $colors:(
@@ -8,9 +9,7 @@ $colors:(
     tertiary:hsl(165, 56%, 74%),
     dark:hsl(0, 0%, 0%),
     light:hsl(0, 0%, 100%),    
-    green:hsl(166, 100%, 14%)
-    
-    
+    green:hsl(166, 100%, 14%)    
 );
 
 $background-location: tint(color(dark),91.6);
