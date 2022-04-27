@@ -1,0 +1,260 @@
+$anim-dur: 1500ms;
+$peak: 40%; // le plus haut niveau de pancake
+
+.spinner-cook{
+  display: flex;  
+  position: fixed;
+  visibility: visible;
+  height: 100%;
+  width: 100%;
+  top:0;
+  animation: spinner 3500ms forwards;
+  z-index: 99;
+}
+
+.cook-content{
+    background: $background-button;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.cook-scene{
+    display: flex;
+}
+
+.cook-gaz{
+    margin: auto;    
+    background: #eaeaea;
+    width: 200px;
+    max-width: 100%;
+    height: 200px;
+    max-height: auto;
+    position: relative;
+    top: 40vh;
+    border-top: 5px solid black;
+    z-index: initial;    
+    &::before{
+        background: inherit;
+        content:"";
+        position: absolute;        
+        height: 20px;
+        width: 10px;
+        top:100%;
+        right: 10px;
+    }
+    &::after{
+        background: inherit;
+        content:"";
+        position: absolute;        
+        height: 20px;
+        width: 10px;
+        top:100%;
+        left: 10px;
+    }
+    &__title{
+      position: relative;
+      top:20%;
+      text-align: center;
+      font-family: $font-title;
+      font-weight: 300;
+      font-size: 30px;
+    }
+    @include break-to(small){
+      width: 400px;
+      height: 400px;    
+    }
+}
+.cook-back{
+  position: relative;
+  width: 10px;
+  height: 20px;
+  left: 97%;
+  bottom: 160px;
+  background-color: color(dark);
+}
+
+.cook-flame{
+  bottom: 10px;
+  left: 20px;
+	width:50px;
+	height:50px;
+	background:linear-gradient(-45deg, red, orange);
+	border-radius: 50px 50px 0px 50px;
+	transform:rotate(-135deg);
+	animation:.1s flame 10;
+	filter:blur(10px);
+	position:relative;
+	box-shadow:17px 20px 90px #700;
+	border:45px solid black;
+	border-left-width:25px;
+	border-top-width:25px;
+  z-index: -1;
+	
+	&:after,
+	&:before{
+		content:'';
+		width:50px;
+		height:50px;
+		display:block;
+		position:absolute;
+		background:linear-gradient(-45deg, red, orange);
+		animation:.2s flame 10;
+		transform:scale(.8) rotate(20deg);
+		border-radius: 50px 50px 0px 50px;
+		top:20px;
+	}
+	&:before{
+		top:0;
+		animation-duration:.09s;
+		transform:scale(.9) rotate(-15deg) translate(10px, 0px);
+	}
+}
+.cook-pan{
+    position: relative;    
+    bottom: 100px;
+    left: 10px;
+    width: 87px;
+    height: 15px;
+    border-radius: 0 0 1.4em 1.4em;
+    border-bottom: 1px solid #8f0707;
+    color: black;
+    background: black;
+    transform-origin: -15% 0;    
+    animation: flip $anim-dur linear 3;
+    transform-origin: bottom left;
+    &::after{
+        content: "";
+        position: absolute;
+        bottom: 18px;
+        right: 85px;
+        width: 45px;
+        height: 7px;
+        background-color: transparent;
+        border-top: 1vh solid #333;
+        border-left: 1vh solid transparent;
+        border-radius: 100%;
+        transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
+        color: black;
+        background: black;
+    }
+    &__pancake{
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: auto;
+      //transform: rotateX(85deg);            
+      animation: jump $anim-dur 500ms ease-in-out 3;
+    }
+    &__pastry
+      {
+        position: relative;
+        left: 15px;
+        width: 70%;
+        height: 60%;
+        background-color: black;
+        color: black;
+        box-shadow: 0 0 3px 0 black;
+        border-radius: 100%;
+        animation: fly $anim-dur 500ms cubic-bezier(.47,.71,.37,.99) 3;
+      }
+       
+}
+.cook-progress {
+    position: relative;
+    top:25%;
+    height: 20px;
+    background: color(dark);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: #637373;
+      animation: progress 3s linear both;
+    }
+  }
+
+  @keyframes spinner {
+    0%{
+      opacity: 1;
+    }
+    90%{
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  
+  @keyframes progress {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+@keyframes flame{
+  0% {height:50px; width:50px;}
+  50% {height:40px; width:40px;}
+  100% {height:50px; width:50px;}
+}
+
+@keyframes flip {
+    0% {
+        transform: rotate(0deg);
+        
+    }
+    10%{
+        transform: translate(10px);
+    }
+    20%{
+        transform: translate(-10px);
+    }    
+
+    30%{
+        transform: rotate(-27deg);
+    }
+
+    60% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0%;
+  }
+  25% {
+    bottom: 150%;
+  }  
+}
+
+@keyframes fly {
+  0% {
+    bottom: 26%;
+    
+  }
+  10% {
+    transform: rotate(0deg);
+    bottom: $peak;
+  }
+  50% {
+    bottom: 26%;
+        
+  }
+  80% {
+    bottom: $peak;
+  }
+  100% {
+    bottom: 0%;
+    transform: rotate(-180deg);
+  }
+}

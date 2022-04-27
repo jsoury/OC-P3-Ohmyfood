@@ -2,6 +2,11 @@
 @import "libs/function.scss";
 @import "libs/mixin.scss";
 
+$breakpoints: (
+  'small'  : 767px,
+  'medium' : 992px,
+  'large'  : 1200px
+);
 
 $colors:(
     primary:hsl(267, 66%, 60%), 

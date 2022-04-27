@@ -1,5 +1,5 @@
 $num-dishs: 3;
-$anim-dur: 1000ms;
+$anim-dur: 750ms;
 $anim-delay: calc($anim-dur / $num-dishs);
 
 
@@ -19,18 +19,47 @@ $anim-delay: calc($anim-dur / $num-dishs);
         flex-direction: row;
         align-items: center;
     }    
+    &__bullete{
+        color: color(light);
+        background: color(primary);
+        border-radius: 50%;
+        height: 5px;
+        width: 5px;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -10px;
+    }
+    i{
+        color:$working-icon;
+        font-size: 22px; 
+        margin: 0 30px;        
+    }
     &.store{
         background: $working-store;
-    }        
+    }
+    i.store{        
+        color:color(primary);        
+    }
+    &:hover, :active{
+        transform: scale(1.01);
+        background: $working-store;
+        i.store{        
+            color:color(primary);        
+        }
+    }
 }
 
 .jumbotron-menu{
     @extend .jumbotron;
     cursor: pointer;
-    animation: jumbotron-display $anim-dur ease-in-out;
+    opacity: 0;
+    animation: jumbotron-display $anim-dur ease-in-out both;
     @for $i from 1 through $num-dishs {
         &--dish#{$i}{
-            animation-delay: $anim-delay * $i;
+            animation-delay: ($anim-delay * $i)+750;
+     
         }
     }    
     overflow: hidden;    
@@ -103,8 +132,7 @@ $anim-delay: calc($anim-dur / $num-dishs);
 }
 
 @keyframes jumbotron-display{
-    0% {
-        opacity: 0;
+    0% {        
         transform:translateY(999px);        
     }          
     100% {
