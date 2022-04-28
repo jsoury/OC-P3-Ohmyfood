@@ -1,4 +1,4 @@
-$num-dishs: 3;
+$num-dishs: 4;
 $anim-dur: 750ms;
 $anim-delay: calc($anim-dur / $num-dishs);
 
@@ -9,7 +9,6 @@ $anim-delay: calc($anim-dur / $num-dishs);
     box-shadow: $shadow;
     line-height: 1.4;  
     display: flex;
-    align-items: center;
 }
 .jumbotron-working{
     @extend .jumbotron;    
@@ -61,33 +60,36 @@ $anim-delay: calc($anim-dur / $num-dishs);
     @extend .jumbotron;
     cursor: pointer;
     opacity: 0;
-    animation: jumbotron-display $anim-dur ease-in-out both;
+    transform: scale(0);
+    overflow: hidden; 
+    animation: jumbotron-menu-display $anim-dur ease-in-out both;
     @for $i from 1 through $num-dishs {
         &--dish#{$i}{
             animation-delay: ($anim-delay * $i)+750;
      
         }
-    }    
-    overflow: hidden;    
+    }       
     &__body{
-        width: 100%;       
+        display: flex;
+        flex: 1;
+        justify-content: space-between; 
         padding: 15px 10px;
         overflow: hidden;
-        transition: all 600ms;        
+        //transition: all 600ms;        
     }   
     &__title{
         font-weight: 700;
     }
-    &__description{            
-        &--float-right{
-            float: right;
-        }       
+    &__text{            
+        display: flex;        
+        flex-direction: column;  
+        overflow: hidden;
+        white-space: nowrap;
+        justify-content: space-between;  
     }
     &__price{
         display: flex;
-        align-items: end;
-        height: 100%;
-        padding: 10px;
+        align-items: flex-end;        
         font-weight: 700;
     }
     i{
@@ -95,18 +97,33 @@ $anim-delay: calc($anim-dur / $num-dishs);
         font-size: 25px;
         transition: all 600ms;
     };
+    &__selected{        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: color(tertiary);
+        height: 100%;
+        width: 0;
+        opacity: 0;
+        border-radius: 0 20px 20px 0;
+        transition: all 600ms;        
+    }
     &:hover, :active{
-        
-        & > .selected{            
-            transform : scaleX(1);
-            width: 100px;
-            margin: 0;
-            & i {
-                transform: rotate(360deg);
-            }
-        }
-        
-    }    
+        & > .jumbotron-menu__selected{                
+        width: 25%;
+        opacity: 1;
+        margin: 0;
+        @include break-to(large){
+            width: 15%;
+        }        
+    }            
+        & i {
+            transform: rotate(360deg);            
+        }        
+    }
+    @include break-to(large){
+        max-width: 600px;
+    }     
 }
 /**
  * Helper class pour tronquer et ajouter une ellipse à une chaîne
@@ -120,30 +137,17 @@ $anim-delay: calc($anim-dur / $num-dishs);
     text-overflow: ellipsis; /* 2 */
     overflow: hidden;
   }
-/**
- * box contenant l'effet de selection d'un plat
- */    
-  .selected{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: color(tertiary);
-    height: 100%;
-    width: 0px;
-    margin-right: -20px;
-    border-radius: 0 20px 20px 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: all 600ms;
-}
 
-@keyframes jumbotron-display{
+@keyframes jumbotron-menu-display{
     0% {        
-        transform:translateY(999px);        
+        transform:translateY(100%);        
+    }
+    70%{
+        opacity: 0;
+        transform:translateY(30%) scale(1); 
     }          
     100% {
         opacity: 1;
         transform:translateY(0) ;
-    }
-    
+    }    
 }

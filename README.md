@@ -59,11 +59,11 @@ Technologies
 - [x] Étape 5 : Ajout de la partie restaurants
 - [x] Étape 6 : Réalisez le “jumbotron dish”
 - [x] Étape 7 : Réalisez la page restaurant
-- [ ] Étape 8 : créez les effets bouton
+- [x] Étape 8 : créez les effets bouton
 - [x] Étape 9 : créez les effets page d’accueil
 - [x] Étape 10 : créez les effets page de menu
 - [x] Étape 10 : Implémentez le footer
-- [ ] Étape 11 : Vérifiez la qualité de votre code
+- [x] Étape 11 : Vérifiez la qualité de votre code
 
 ## Auteur
 

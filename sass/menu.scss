@@ -1,17 +1,9 @@
 .menu{
     position: relative;
-    top:-90px;
+    top:-45px;
     border-radius: 20px 20px 0 0;
     background-color: $background-grey-light;
-    margin: -90px 0;
-    height: calc(100% + 100px);
-
-    section{
-        display: flex;
-        flex-direction: column;
-        gap:15px;
-    }
-
+    margin: -45px 0;    
     &__container{
         margin: 0 10px;
         padding: 10px 0;
@@ -31,6 +23,25 @@
         text-transform: uppercase;
         font-weight: 300;
     }
+    @include break-to(small){
+        top:-90px;
+        margin: -90px 0;
+        &__wraper{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    @include break-to(medium){
+        border-radius: 0;
+        &__wraper{
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));            
+            gap:30px;
+        }
+    }
+    @include break-to(large){
+        padding: 40px;
+    }    
 }
 .dish{
     animation: dish-display 1000ms 500ms both;
@@ -45,6 +56,11 @@
             width   : 40px;
             border-bottom:5px solid color(tertiary);
         }
+    }
+    &__container{        
+        display: flex;
+        flex-direction: column;
+        gap:15px;             
     }
 }
 .menu-like{

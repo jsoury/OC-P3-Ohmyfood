@@ -1,7 +1,8 @@
-.header{    
+.header{  
     &__logo{        
         display: flex;
-        justify-content: center; 
+        justify-content: center;
+        background: color(light); 
         border-bottom: 5px outset rgba(236,236,236,0.11);
         &--brand{
             display: block;
@@ -19,7 +20,40 @@
     &__container{
         background: $background-grey-light;
         text-align: center;
-        padding: 20px 20px;        
+        padding: 20px 20px;
+        @include break-to(medium){
+            background: none;
+            color:color(light);
+            &::after{                
+                content: "";
+                z-index: -1;
+                width: 100%;
+                height: 100%;
+                max-height: 30rem;
+                position: absolute;
+                top: 0;
+                right: 0;
+                background: url(../images/restaurants/restaurant-cuisine.jpg) no-repeat;
+                background-size: cover;
+                background-position: center center;
+                filter: grayscale(100%) opacity(80%) brightness(0.3);;           
+            }
+            & .btn{
+                margin: 90px auto;
+            }                   
+        }    
+    }    
+    &__overlay{
+        background: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 50%;
+        top: 50%;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+        opacity: 1;
     }
     nav{
         position: relative;
@@ -33,5 +67,10 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
+    @include break-to(medium){
+        max-height: 30rem;
+        object-position: center center;
+    }  
     }
+    
 }
