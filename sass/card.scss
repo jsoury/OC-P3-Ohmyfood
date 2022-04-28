@@ -93,7 +93,13 @@
         p{
             margin: 0
         }        
-    }    
+    }
+    @include break-to(small){
+        width: 45%;
+    }
+    @include break-to(large){
+        width: 20%;
+    }     
 }
 
 .card-like{

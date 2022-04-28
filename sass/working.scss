@@ -5,7 +5,8 @@
         gap:20px;
         @include break-to(medium){
             flex-direction: row;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 40px;
         }
     }     
 }

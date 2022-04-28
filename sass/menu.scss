@@ -3,7 +3,8 @@
     top:-90px;
     border-radius: 20px 20px 0 0;
     background-color: $background-grey-light;
-    margin: 0;
+    margin: -90px 0;
+    height: calc(100% + 100px);
 
     section{
         display: flex;

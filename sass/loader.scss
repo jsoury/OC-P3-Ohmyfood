@@ -13,31 +13,46 @@ $peak: 40%; // le plus haut niveau de pancake
 }
 
 .cook-content{
-    background: $background-button;
-    height: 100%;
-    width: 100%;
+    background: $background-location;
+    height: 100vh;
+    width: 100vw;
     padding: 30px;
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cook-scene{
     display: flex;
 }
 
+.cook-title{
+  position: relative;
+  bottom:100px;
+  text-align: center;
+  font-family: $font-title;
+  font-weight: 300;
+  font-size: 2.5rem;
+  @include break-to(small){
+    font-size: 5rem;
+  }
+}  
+
 .cook-gaz{
     margin: auto;    
-    background: #eaeaea;
-    width: 200px;
+    background: $working-icon;
+    width: 100px;
     max-width: 100%;
-    height: 200px;
+    height: 100px;
     max-height: auto;
     position: relative;
-    top: 40vh;
     border-top: 5px solid black;
     z-index: initial;    
     &::before{
-        background: inherit;
+        background: $working-icon;
         content:"";
         position: absolute;        
         height: 20px;
@@ -46,45 +61,44 @@ $peak: 40%; // le plus haut niveau de pancake
         right: 10px;
     }
     &::after{
-        background: inherit;
+        background: $working-icon;
         content:"";
         position: absolute;        
         height: 20px;
         width: 10px;
         top:100%;
         left: 10px;
-    }
-    &__title{
-      position: relative;
-      top:20%;
-      text-align: center;
-      font-family: $font-title;
-      font-weight: 300;
-      font-size: 30px;
-    }
-    @include break-to(small){
-      width: 400px;
-      height: 400px;    
-    }
+    }      
 }
-.cook-back{
+.cook-window{
   position: relative;
-  width: 10px;
-  height: 20px;
-  left: 97%;
-  bottom: 160px;
-  background-color: color(dark);
+  width: 80px;
+  height: 80px;
+  left: 11px;
+  bottom: 76px;
+  background-color: inherit;
+  border: 2px solid black;
+  &::before{
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 5px;
+    left: 29px;
+    bottom: 67px;
+    background-color: black;
+    z-index: 99;
+  }
 }
 
 .cook-flame{
-  bottom: 10px;
-  left: 20px;
+  bottom: 2px;
+  left: 14px;
 	width:50px;
 	height:50px;
 	background:linear-gradient(-45deg, red, orange);
 	border-radius: 50px 50px 0px 50px;
 	transform:rotate(-135deg);
-	animation:.1s flame 10;
+	animation:.1s flame 100;
 	filter:blur(10px);
 	position:relative;
 	box-shadow:17px 20px 90px #700;
@@ -101,7 +115,7 @@ $peak: 40%; // le plus haut niveau de pancake
 		display:block;
 		position:absolute;
 		background:linear-gradient(-45deg, red, orange);
-		animation:.2s flame 10;
+		animation:.2s flame 20;
 		transform:scale(.8) rotate(20deg);
 		border-radius: 50px 50px 0px 50px;
 		top:20px;
@@ -128,12 +142,12 @@ $peak: 40%; // le plus haut niveau de pancake
     &::after{
         content: "";
         position: absolute;
-        bottom: 18px;
+        bottom: 16px;
         right: 85px;
         width: 45px;
         height: 7px;
         background-color: transparent;
-        border-top: 1vh solid #333;
+        border-top: 0.5vh solid black;
         border-left: 1vh solid transparent;
         border-radius: 100%;
         transform: rotate(20deg) rotateX(0deg) scale(1.3, 0.9);
@@ -164,9 +178,10 @@ $peak: 40%; // le plus haut niveau de pancake
 }
 .cook-progress {
     position: relative;
-    top:25%;
+    bottom: 100px;
     height: 20px;
-    background: color(dark);
+    width: 15rem;
+    background: #637373;
     &::after {
       content: "";
       position: absolute;
@@ -174,8 +189,11 @@ $peak: 40%; // le plus haut niveau de pancake
       left: 0;
       width: 0;
       height: 100%;
-      background: #637373;
+      background: color(dark);      
       animation: progress 3s linear both;
+    }
+    @include break-to(small){
+      width: 30rem;
     }
   }
 

@@ -49,6 +49,12 @@ $anim-delay: calc($anim-dur / $num-dishs);
             color:color(primary);        
         }
     }
+    @include break-to(medium){
+        &__body{
+            padding-right: 30px;
+        }
+        
+    }
 }
 
 .jumbotron-menu{
