@@ -38,7 +38,7 @@ $anim-delay: calc($anim-dur / $num-dishs);
     &:hover, :active{
         transform: scale(1.01);
         background: $working-store;
-        i{        
+        .fa-solid{        
             color:color(primary);        
         }
     }
