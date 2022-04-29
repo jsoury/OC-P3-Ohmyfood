@@ -34,17 +34,11 @@ $anim-delay: calc($anim-dur / $num-dishs);
         color:$working-icon;
         font-size: 22px; 
         margin: 0 30px;        
-    }
-    &.store{
-        background: $working-store;
-    }
-    i.store{        
-        color:color(primary);        
-    }
+    }    
     &:hover, :active{
         transform: scale(1.01);
         background: $working-store;
-        i.store{        
+        i{        
             color:color(primary);        
         }
     }
