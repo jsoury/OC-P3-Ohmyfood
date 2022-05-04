@@ -18,6 +18,11 @@
         list-style: none;
         padding: 0;
         line-height: 1.6;
+    }
+    i{
+        height: 16px;
+        width: 20px;
+        margin-right: 5px;
     }    
     @include break-to(small){
         ul{
