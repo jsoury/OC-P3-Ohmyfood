@@ -1,70 +1,77 @@
-# Projet3: Dynamisez une page web avec des animations CSS
+# OC-P3-Dynamisez une page web avec des animations CSS (Ohmyfood)
 
-## Objectif
+[![](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fjsoury.github.io%2FOC-P3-Ohmyfood)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fjsoury.github.io%2FOC-P3-Ohmyfood)
 
 L'objectif est de développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques.
 
-## Identité graphique
+- voir le [projet](https://jsoury.github.io/OC-P3-Ohmyfood).
 
-_Polices_
+## 1. Contexte
 
-- Logo et titres: Shrikhand
-- Texte: Roboto
+Vous venez d’être recruté chez Ohmyfood!, en tant que développeur junior. Félicitations !
 
-_Couleurs_
+Ohmyfood! est une jeune startup qui voudrait s'imposer sur le marché de la restauration. L'objectif est de développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques.
 
-| Primaire                                                                 | Secondaire                                                                | Tertiaire                                                                |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| <div style="background-color:#9356DC; width: 100%; height: 20px;"></div> | <div style="background-color:#FF79DA ; width: 100%; height: 20px;"></div> | <div style="background-color:#99E2D0; width: 100%; height: 20px;"></div> |
-| #9356DC                                                                  | #FF79DA                                                                   | #99E2D0                                                                  |
+## 2. Objectifs
 
-## Spécifications fonctionnelles
+- Implémenter l'interface en fonction de la maquette
+- Ajouter les animations CSS
 
-### Boutons
+## 3. Spécifications
 
-- Au survol, la couleur de fond des boutons principaux devra légèrement s’éclaircir. L’ombre portée devra également être plus visible.
-- À terme, les visiteurs pourront sauvegarder leurs menus préférés. Pour ça, un bouton "J’aime" en forme de cœur est présent sur la maquette. Au clic, il devra se remplir progressivement. Pour cette première version, l’effet peut être apparaître au survol sur desktop au lieu du clic.
+- HTML, Sass
 
-### Page d’accueil
+## 4. Démarrage
 
-- Quand l’application aura plus de menus, un “loading spinner” sera nécessaire. Sur cette maquette, nous souhaitons en avoir un aperçu. Il devra apparaître pendant 1 à 3 secondes quand on arrive sur la page d'accueil, couvrir l'intégralité de l'écran, et utiliser les animations CSS (pas de librairie). Le design de ce loader n’est pas défini, toute proposition est donc la bienvenue tant qu’elle est cohérente avec la charte graphique du site.
+[Code source](https://github.com/jsoury/OC-P3-Ohmyfood)
 
-### Pages de menu
+### 4.1. IDE
 
-- À l’arrivée sur la page, les plats devront apparaître progressivement avec un léger décalage dans le temps. Ils pourront soit apparaître un par un, soit par groupe “Entrée”, “Plat” et “Dessert”. Un exemple de l’effet attendu est fourni.
-- Le visiteur peut ajouter les plats qu'il souhaite à sa commande en cliquant dessus. Cela fait apparaître une petite coche à droite du plat. Cette coche devra coulisser de la droite vers la gauche. Pour cette première version, l’effet peut apparaître au survol sur desktop au lieu du clic.
-- Si l’intitulé du plat est trop long, il devra être rogné avec des points de suspension. Un exemple de l’effet attendu est fourni.
+- [Visual Studio code](https://code.visualstudio.com/)
 
-## Spécifications techniques
+### 4.2. Prérequis
 
-Technologies
+- [Liver server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-- Le développement devra se faire en CSS, sans JavaScript.
-- Aucun framework ne devra être utilisé, en revanche l’utilisation de SASS serait un plus.
-- Aucun code CSS ne devra être appliqué via un attribut style dans une balise HTML.
-- Tout le code doit être versionné sur GitHub et le site devra être accessible sur
-  Github Pages une fois terminé.
-- le site sera développé en utilisant l’approche mobile-first.
-- L’ensemble du site devra être responsive sur mobile, tablette et desktop.
-- Les pages devront passer la validation W3C en HTML et CSS sans erreur.
-- Le site doit être parfaitement compatible avec les dernières versions desktop de
-  Chrome et Firefox.
+### 4.3 Utilisation
 
-## Etapes
+- Clonez ce dépôt sur votre ordinateur:
 
-- [x] Étape 1 : Mettez en place votre environnement de développement
-- [x] Étape 2 : Découpez votre maquette à l’aide d’un papier et d’un crayon
-- [x] Étape 3 : Intégrez le header du projet
-- [x] Étape 4 : Ajoutez la partie fonctionnement
-- [x] Étape 5 : Ajout de la partie restaurants
-- [x] Étape 6 : Réalisez le “jumbotron dish”
-- [x] Étape 7 : Réalisez la page restaurant
-- [x] Étape 8 : créez les effets bouton
-- [x] Étape 9 : créez les effets page d’accueil
-- [x] Étape 10 : créez les effets page de menu
-- [x] Étape 10 : Implémentez le footer
-- [x] Étape 11 : Vérifiez la qualité de votre code
+```bash
+git clone https://github.com/jsoury/OC-P3-Ohmyfood.git
+```
 
-## Auteur
+- Exécuter index.html
 
-Jonathan SOURY
+## 5. Auteur
+
+- [![](https://img.shields.io/badge/Portfolio-Jonathan%20SOURY-orange)](https://js-portfolio-hgzextusx-jsoury.vercel.app/)
+- [![](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/jonathan-soury/)
+
+<img src="https://github-readme-stats.vercel.app/api?username=jsoury&show_icons=true"/>
+
+<img src="https://github-readme-stats.vercel.app/api/top-langs?username=jsoury&layout=compact"/>
+
+## 6. License
+
+License MIT
+
+Copyright (c) [2022] [Jonathan SOURY]
+
+Permission est accordée, sans frais, à toute personne obtenant une copie
+de ce logiciel et des fichiers de documentation associés (le "Logiciel"), pour traiter
+dans le Logiciel sans restriction, y compris, sans s'y limiter, les droits
+utiliser, copier, modifier, fusionner, publier, distribuer, sous-licencier et/ou vendre
+copies du Logiciel, et de permettre aux personnes à qui le Logiciel est
+fourni pour ce faire, sous réserve des conditions suivantes :
+
+L'avis de droit d'auteur ci-dessus et cet avis d'autorisation doivent être inclus dans tous
+des copies ou des parties substantielles du Logiciel.
+
+LE LOGICIEL EST FOURNI "TEL QUEL", SANS GARANTIE D'AUCUNE SORTE, EXPRESSE OU
+IMPLICITES, Y COMPRIS, MAIS SANS S'Y LIMITER, LES GARANTIES DE QUALITÉ MARCHANDE,
+ADÉQUATION À UN USAGE PARTICULIER ET ABSENCE DE CONTREFAÇON. EN AUCUN CAS LE
+LES AUTEURS OU LES DÉTENTEURS DU COPYRIGHT SERONT RESPONSABLES DE TOUTE RÉCLAMATION, DOMMAGE OU AUTRE
+RESPONSABILITÉ, QUE CE SOIT DANS UNE ACTION CONTRACTUELLE, DÉLICTUELLE OU AUTRE, RÉSULTANT DE,
+EN DEHORS OU EN RELATION AVEC LE LOGICIEL OU L'UTILISATION OU D'AUTRES TRANSACTIONS DANS LE
+LOGICIEL.
